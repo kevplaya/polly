@@ -5,7 +5,7 @@
  * Date: 2018. 4. 21.
  * Time: AM 10:02
  */
-require_once 'lib/config.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/lib/config.php';
 class S3
 {
     protected $sBucket;
