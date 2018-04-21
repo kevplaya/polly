@@ -40,7 +40,7 @@ class S3
                 , 'Bucket' => $this->sBucket
                 , 'ContentType' => mime_content_type($sFile)
             ];
-        $sS3filelink = $this->sS3client->putObject($aFile));
+        $sS3filelink = $this->sS3client->putObject($aFile);
 
         if(!empty($sS3filelink)){
             return $sS3filelink;
