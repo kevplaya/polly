@@ -6,4 +6,4 @@
  * Time: AM 9:45
  */
 
-require_once realpath($_SERVER['DOCUMENT_ROOT'].'/..').'/vendor/autoload.php';
+require_once realpath($_SERVER['DOCUMENT_ROOT'].'/../..').'/vendor/autoload.php';
