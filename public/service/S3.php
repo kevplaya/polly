@@ -5,7 +5,8 @@
  * Date: 2018. 4. 21.
  * Time: AM 10:02
  */
-require_once $_SERVER['DOCUMENT_ROOT'].'/lib/config.php';
+
+require_once dirname(__FILE__,2).'/lib/config.php';
 class S3
 {
     protected $sBucket;
@@ -17,11 +18,11 @@ class S3
 
     ];
 
-    public function  __construct($sBuckeName,$sRegion)
+    public function  __construct($sBuckeName,$sRegion='ap-northeast-2')
     {
         $this->sBucket = $sBuckeName;
         $this->sRegion = $sRegion;
-        $oCredential = new \Aws\Credentials\Credentials(ACCESS_KEY_ID, SECRET_KEY);
+        $oCredential = new \Aws\Credentials\Credentials(ACCESS_KEY_ID,SECRET_KEY);
         $aClientInfo = [
             'version' => 'latest',
             'credentials' => $oCredential,
@@ -30,7 +31,7 @@ class S3
         $this->sS3client = new Aws\S3\S3Client($aClientInfo);
     }
 
-    public function putBucket($sFileName,$sFile){
+    public function putBucket($sFileName,$sFile,$sMimetype){
 
         $aFile =
             [
@@ -38,7 +39,7 @@ class S3
                 , 'ACL' => 'public-read'
                 , 'Body' => $sFile
                 , 'Bucket' => $this->sBucket
-                , 'ContentType' => mime_content_type($sFile)
+                , 'ContentType' => $sMimetype
             ];
         $sS3filelink = $this->sS3client->putObject($aFile);
 

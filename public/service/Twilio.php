@@ -6,18 +6,13 @@
  * Time: AM 10:36
  */
 
-require_once $_SERVER['DOCUMENT_ROOT'].'/lib/config.php';
-
-
+require_once dirname(__FILE__,2).'/lib/config.php';
 class Twilio
 {
     protected $oClient;
     public  function __construct()
     {
-        $sSid = '';
-        $sToken = '';
-        $this->oClient = new Twilio\Rest\Client($sSid, $sToken);
-
+        $this->oClient = new Twilio\Rest\Client(TWILIO_SID, TWILIO_TOKEN);
     }
 
     public function setMessage($sReceiver,$sSender,$sText){

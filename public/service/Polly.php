@@ -5,16 +5,17 @@
  * Date: 2018. 4. 21.
  * Time: AM 10:20
  */
-require_once $_SERVER['DOCUMENT_ROOT'].'lib/config.php';
+
+require_once dirname(__FILE__,2).'/lib/config.php';
 class Polly
 {
     protected $oPolly ;
     
-    public function __construct($sRegion)
+    public function __construct($sRegion='ap-northeast-2')
     {
         $oCredential = new \Aws\Credentials\Credentials(ACCESS_KEY_ID, SECRET_KEY);
         $aClientInfo = [
-            'version' => '2018–04–21'
+            'version' => '2016-06-10'
             , 'credentials' => $oCredential
             , 'region' => $sRegion ];
         $this->oPolly = new \Aws\Polly\PollyClient($aClientInfo);

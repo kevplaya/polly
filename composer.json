@@ -4,5 +4,4 @@
         "aws/aws-sdk-php": "^3.54",
         "twilio/sdk": "^5.17"
     }
-
 }
