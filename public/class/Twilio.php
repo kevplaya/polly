@@ -20,15 +20,25 @@ class Twilio
 
     }
 
-    public function setMessage(){
+    public function setMessage($sReceiver,$sSender,$sText){
 
         $this->oClient->messages->create(
 
-            '+8201071186827',
+            $sReceiver,
             array(
 
-                'from' => '+8201071186827',
-                'body' => 'Test SMS!'
+                'from' => $sSender,
+                'body' => $sText
+            )
+        );
+    }
+
+    public function setCall($sReceiver,$sSender,$sS3files){
+        $call = $this->oClient->calls->create(
+            $sReceiver,
+            $sSender,
+            array(
+                'url' => $sS3files
             )
         );
     }
