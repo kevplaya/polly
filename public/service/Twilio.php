@@ -29,11 +29,14 @@ class Twilio
     }
 
     public function setCall($sReceiver,$sSender,$sS3files){
+
+        $twimlet_url = "http://twimlets.com/message?Message%5B0%5D={$sS3files}";
+
         $call = $this->oClient->calls->create(
             $sReceiver,
             $sSender,
             array(
-                'url' => $sS3files
+                'url' => $twimlet_url
             )
         );
     }
