@@ -1,7 +1,15 @@
 {
     "name" : "pollytotts"
+    ,"repositories": [
+    {
+        "type":"path",
+        "url":"/service/Helper",
+        "options":{
+            "symlink":true
+        }
+    }]
     ,"require": {
-        "aws/aws-sdk-php": "^3.54",
-        "twilio/sdk": "^5.17"
+        "bdt/helper": "*"
     }
+
 }

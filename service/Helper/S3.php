@@ -5,8 +5,8 @@
  * Date: 2018. 4. 21.
  * Time: AM 10:02
  */
-
-require_once dirname(__FILE__,2).'/lib/config.php';
+namespace BDTHelper\AWS;
+require_once dirname(__FILE__,2).'/vendor/autoload.php';
 class S3
 {
     protected $sBucket;
