@@ -6,12 +6,7 @@
  * Time: AM 9:51
  */
 
-
-define('ROOT_DIR', dirname(__FILE__));
-
-/* default include_path */
-ini_set('include_path', ROOT_DIR);
-
+require_once dirname(__FILE__,3).'/vendor/autoload.php';
 
 define('ACCESS_KEY_ID','AKIAJAHHMAZVN3YBCXWA');
 define('SECRET_KEY','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');

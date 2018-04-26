@@ -1,15 +1,11 @@
 {
     "name" : "pollytotts"
-    ,"repositories": [
-    {
-        "type":"path",
-        "url":"/service/Helper",
-        "options":{
-            "symlink":true
-        }
-    }]
-    ,"require": {
-        "bdt/helper": "*"
+
+    ,"minimum-stability": "stable"
+    ,"autoload":{
+      "psr-4" : {
+        "Helper\\" : "service/Helper/"
+      }
     }
 
 }
